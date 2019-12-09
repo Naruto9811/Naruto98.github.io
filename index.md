@@ -24,14 +24,13 @@
 #### 1. Random Design Analysis of Ridge Regression
 
 - **Abstract :** 
-  <font size=3>
+ 
   
   &emsp;&emsp;传统的最小二乘方法或是其变种岭回归估计，在一般的假设情境下（即样本点的方差结构完全已知的情况下），虽然能够快速方便得出关于回归系数的估计量，但由于抽样出现的偏差，使得所得系数很可能不能很好地对于在样本外的数据点进行良好的预测，所以在这里提出了基于Random Design的参数估计方法，将对于未知数据的预测效果纳入到考量范围之中。
   
-  &emsp;&emsp;文章当中主要基于简单的误差分解，研究数据点的方差结构$\hat{{\Sigma}}$，相应变量中的噪声$\sigma$，以及数据模型与线性模型的吻合程度，对于最后估计系数准确度的影响。
+  &emsp;&emsp;文章当中主要基于简单的误差分解，研究数据点的方差结构$\hat{\Sigma}$，相应变量中的噪声$\sigma$，以及数据模型与线性模型的吻合程度，对于最后估计系数准确度的影响。
   
   
-</font>
 
 - **Assumptions :**
 
@@ -41,7 +40,6 @@
   
 - **Theorems :**<font size=3>
   &emsp;&emsp;
-</font>
 
 - **Technical Skills :**
   
@@ -50,7 +48,6 @@
 #### 2. Non-Asymptotic Analysis of Stochastic Approximation Algorithms
 
 - **Abstract :**
-  <font size=3>
   
   &emsp;&emsp;这篇文章主要考虑对于定义在Hilbert Space上的凸目标函数的优化，但必须通过其梯度的无偏估计实现。本篇文章的分析证实了学习率与迭代次数的倒数之间呈比例关系，并且在强凸性要求下可以在这样的学习率下达到最优的收敛速率，但这样的结果对于非强凸性的情况和比例常数的设定不鲁棒。但这样的问题可以在进行averaging（$\bar\theta_n={\frac{1}{n+1}}\sum_{i=0}^{n}\theta_{i}$）和降低下降速率（$\gamma_n=Cn^{-\alpha}$）即减小$\alpha$的情况下被解决，能够鲁棒地得到最优的收敛速率，对于不同的条件设定（强凸或者非强凸性）均具有良好的鲁棒性。
   
@@ -77,15 +74,13 @@
 #### 4. Non-Strongly-Convex Smooth Stochastic Approximation with Convergence Rate O(1/n)
 
 - **Abstract :**
-  <font size=3>
   
   &emsp;&emsp;这篇文章主要舍弃了前人在做随机逼近时对于目标函数的强凸性假设（**Hessian阵为严格的positive definitive and invertible**，i.e. $f(\theta^\prime) \geqslant f(\theta) + \langle f^\prime(\theta),\theta^\prime - \theta \rangle + \frac{u}{2!}||\theta^\prime - \theta||^2, u>0$），而是在一般的假设条件下（例如，知道某点处梯度的无偏估计），分析了两种算法，将现有算法的收敛速率从$O(1/\sqrt{n})$提高到了$O(1/n)$：第一种算法针对于我们熟悉的least-squares regression：**averaged SGD with a constant step-size**；第二种算法针对于logistic regression：**a simple novel algorithm a)构建对于损失函数的连续局部二次逼近，b)并且使得时间复杂度与SGD相同。**
   **ps：在证明过程中，为保证连贯性，两算法的损失函数和其他设定都使用了较为一般的表达形式，e.g. $loss\ function：f(\theta) = E[l(y_n,\langle x_n, \theta\rangle)]$**
 
-</font>
 &nbsp;
 
-- **Assumptions :**<font size = 3>
+- **Assumptions :**
   **Constant-Step-Size least-mean-squares algorithm：**
    
    A1. 解释变量（or协变量）数据所处空间为欧式空间，维度为d。
@@ -117,10 +112,9 @@
    $$
 
 
-</font>
 &nbsp;
 
-- **Theorems :**<font size=3>
+- **Theorems :**
   ***1) Theroem1: A1-6;*** for any constant step-size, $\mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{1}{2 n}\left[\frac{\sigma \sqrt{d}}{1-\sqrt{\gamma R^{2}}}+R\left\|\theta_{0}-\theta_{*}\right\| \frac{1}{\sqrt{\gamma R^{2}}}\right]^{2},\text {When } \gamma=1 /\left(4 R^{2}\right), \text { we obtain } \mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{2}{n}\left[\sigma \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\|\right]^{2}$
    **ps：可计算得$f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right) = \frac{1}{2}<\bar{\eta}_{n-1}, H \bar{\eta}_{n-1}>, \bar{\eta}_{n-1}=\bar{\theta}_{n-1}-\theta^\ast$**
    ***2) Theorem2: A1-7;*** for any real p $\ge1$, and for a step-size $\gamma \le 1/12p\kappa R^2, $ we have $\left(\mathbb{E}\left|f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right|^{p}\right)^{1 / p} \leqslant \frac{p}{2 n}\left(7 \tau \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\| \sqrt{3+\frac{2}{\gamma p R^{2}}}\right)^{2}$ 
