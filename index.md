@@ -91,7 +91,11 @@
 </font>
 &nbsp;
 
-- **Assumptions :**<font size = 3>
+- **Assumptions :**
+
+<font size = 3>
+    
+
   **Constant-Step-Size least-mean-squares algorithm：**
    
    A1. 解释变量（or协变量）数据所处空间为欧式空间，维度为d。
@@ -107,7 +111,7 @@
    A6. 残差矩阵与离差阵被Hessian($\theta^\ast$)控制：$\mathbb{E}\left[\xi_{n} \otimes \xi_{n}\right] \preccurlyeq \sigma^{2} H \text { and } \mathbb{E}\left(\left\|x_{n}\right\|^{2} x_{n} \otimes x_{n}\right) \preccurlyeq R^{2} H$
    ps: A1-A5都是随机模拟中较为常见的标准假设，对于最小二乘回归而言，$z_n = x_ny_n$
 
-   A7. $||x_n||^2 \le R^2 \ a.s.$，残差外积矩阵被$Hessian(\theta^\ast)$控制, 以及关于残差的p阶矩常数限制假设，以及关于$x_n$的投影峰度假设：$\forall z \in \mathcal{H}, \quad \mathbb{E}\left\langle z, x_{n}\right\rangle^{4} \leqslant \kappa\langle z, H z\rangle^{2}$
+   A7. $||x_n||^2 \le R^2 \ a.s.$，残差外积矩阵被$Hessian(\theta^\ast)$控制, 以及关于残差的p阶矩常数限制假设，以及关于$x_n$的投影峰度假设: $$\forall z \in \mathcal{H}, \quad \mathbb{E}\left\langle z, x_{n}\right\rangle^{4} \leqslant \kappa\langle z, H z\rangle^{2}$$
 
    B1. 输入空间为d维欧氏空间。
 
