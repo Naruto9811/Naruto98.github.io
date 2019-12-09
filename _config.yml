@@ -1,3 +1,5 @@
 theme: jekyll-theme-cayman
 
 url: 'https://https://naruto9811.github.io/'
+
+markdown: kramdown
