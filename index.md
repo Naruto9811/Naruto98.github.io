@@ -1,3 +1,17 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+
+
 ### Learning Notes for Machine Learning
 
 
@@ -5,7 +19,6 @@
 **from 2019.11.29**
 
 **Outline:**
-[toc]
 #### 1. Random Design Analysis of Ridge Regression
 
 - **Abstract :** 
@@ -14,15 +27,14 @@
   &emsp;&emsp;传统的最小二乘方法或是其变种岭回归估计，在一般的假设情境下（即样本点的方差结构完全已知的情况下），虽然能够快速方便得出关于回归系数的估计量，但由于抽样出现的偏差，使得所得系数很可能不能很好地对于在样本外的数据点进行良好的预测，所以在这里提出了基于Random Design的参数估计方法，将对于未知数据的预测效果纳入到考量范围之中。
   
   &emsp;&emsp;文章当中主要基于简单的误差分解，研究数据点的方差结构$\hat{{\Sigma}}$，相应变量中的噪声$\sigma$，以及数据模型与线性模型的吻合程度，对于最后估计系数准确度的影响。
-  
-  
-</font>
+
+  </font>
 
 - **Assumptions :**
   
 - **Theorems :**<font size=3>
   &emsp;&emsp;
-</font>
+                </font>
 
 - **Technical Skills :**
   
