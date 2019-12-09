@@ -12,84 +12,9 @@
 
 
 
+
+   
 ### Learning Notes for Machine Learning
-
-
-**Peilin Liu**
-**from 2019.11.29**
-
-**Outline:**
-#### 1. Random Design Analysis of Ridge Regression
-
-- **Abstract :** 
-  <font size=3>
-  
-  &emsp;&emsp;传统的最小二乘方法或是其变种岭回归估计，在一般的假设情境下（即样本点的方差结构完全已知的情况下），虽然能够快速方便得出关于回归系数的估计量，但由于抽样出现的偏差，使得所得系数很可能不能很好地对于在样本外的数据点进行良好的预测，所以在这里提出了基于Random Design的参数估计方法，将对于未知数据的预测效果纳入到考量范围之中。
-  
-  &emsp;&emsp;文章当中主要基于简单的误差分解，研究数据点的方差结构$\hat{{\Sigma}}$，相应变量中的噪声$\sigma$，以及数据模型与线性模型的吻合程度，对于最后估计系数准确度的影响。
-
-  </font>
-
-- **Assumptions :**
-  
-- **Theorems :**<font size=3>
-  &emsp;&emsp;
-                </font>
-
-- **Technical Skills :**
-  
-- **Summary :**
-
-#### 2. Non-Asymptotic Analysis of Stochastic Approximation Algorithms
-
-- **Abstract :**
-  <font size=3>
-  
-  &emsp;&emsp;这篇文章主要考虑对于定义在Hilbert Space上的凸目标函数的优化，但必须通过其梯度的无偏估计实现。本篇文章的分析证实了学习率与迭代次数的倒数之间呈比例关系，并且在强凸性要求下可以在这样的学习率下达到最优的收敛速率，但这样的结果对于非强凸性的情况和比例常数的设定不鲁棒。但这样的问题可以在进行averaging（$\bar\theta_n={\frac{1}{n+1}}\sum_{i=0}^{n}\theta_{i}$）和降低下降速率（$\gamma_n=Cn^{-\alpha}$）即减小$\alpha$的情况下被解决，能够鲁棒地得到最优的收敛速率，对于不同的条件设定（强凸或者非强凸性）均具有良好的鲁棒性。
-  
-- **Assumptions :**
-  
-- **Theorems :**
-  
-- **Technical Skills :**
-  
-- **Summary :**
-
-#### 3. Optimal Learning Rates for Kernel Partial Least Squares
-
-- **Abstract :**
-
-- **Assumptions :**
-  
-- **Theorems :**
-  
-- **Technical Skills :**
-  
-- **Summary :**
-
-#### 4. Non-Strongly-Convex Smooth Stochastic Approximation with Convergence Rate O(1/n)
-
-- **Abstract :**
-  <font size=3>
-  
-  &emsp;&emsp;这篇文章主要舍弃了前人在做随机逼近时对于目标函数的强凸性假设（**Hessian阵为严格的positive definitive and invertible**，i.e. $f(\theta^\prime) \geqslant f(\theta) + \langle f^\prime(\theta),\theta^\prime - \theta \rangle + \frac{u}{2!}||\theta^\prime - \theta||^2, u>0$），而是在一般的假设条件下（例如，知道某点处梯度的无偏估计），分析了两种算法，将现有算法的收敛速率从$O(1/\sqrt{n})$提高到了$O(1/n)$：第一种算法针对于我们熟悉的least-squares regression：**averaged SGD with a constant step-size**；第二种算法针对于logistic regression：**a simple novel algorithm a)构建对于损失函数的连续局部二次逼近，b)并且使得时间复杂度与SGD相同。**
-  **ps：在证明过程中，为保证连贯性，两算法的损失函数和其他设定都使用了较为一般的表达形式，e.g. $loss\ function：f(\theta) = E[l(y_n,\langle x_n, \theta\rangle)]$**
-
-</font>
-&nbsp;
-
-- **Assumptions :**<font size = 3>
-  **Constant-Step-Size least-mean-squares algorithm：**
-   
-   A1. 解释变量（or协变量）数据所处空间为欧式空间，维度为d。
-   
-   A2. 每一组观测数据i.i.d.
-   
-   A3. 相应变量与解释变量在概率意义下均方可积. Define $H = E(x_n\otimes x_n)$
-   
-   A4. Define $f(\theta)=(1 / 2) \mathbb{E}\left[\left\langle\theta, x_{n}\right\rangle^{2}-2\left\langle\theta, z_{n}\right\rangle\right]$ attains the global minimum at a certain $\theta^\ast$ and the residual $\xi_{n}=z_{n}-\left\langle\theta_{*}, x_{n}\right\rangle x_{n}$
-   
-   A5. 参数迭代：$\theta_{n}=\theta_{n-1}-\gamma\left(\left\langle\theta_{n-1}, x_{n}\right\rangle x_{n}-z_{n}\right)=\left(I-\gamma x_{n} \otimes x_{n}\right) \theta_{n-1}+\gamma z_{n}$ start from $\theta_{0} \in \mathcal{H}$. &emsp;&emsp;**ps:将目标函数求导后所得的表达式为expected gradient，利用empirical gradient替代即为上式**### Learning Notes for Machine Learning
 
 **Peilin Liu**
 **from 2019.11.29**
@@ -109,6 +34,10 @@
 </font>
 
 - **Assumptions :**
+
+
+
+
   
 - **Theorems :**<font size=3>
   &emsp;&emsp;
