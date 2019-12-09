@@ -21,7 +21,9 @@
 
 **Outline:**
 
-<!-- TOC -->- [Learning Notes for Machine Learning](#learning-notes-for-machine-learning)
+<!-- TOC -->
+
+- [Learning Notes for Machine Learning](#learning-notes-for-machine-learning)
     - [1. Random Design Analysis of Ridge Regression](#1-random-design-analysis-of-ridge-regression) 
     - [2. Non-Asymptotic Analysis of Stochastic Approximation Algorithms](#2-non-asymptotic-analysis-of-stochastic-approximation-algorithms)   
     - [3. Optimal Learning Rates for Kernel Partial Least Squares](#3-optimal-learning-rates-for-kernel-partial-least-squares)
