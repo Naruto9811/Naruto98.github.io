@@ -134,32 +134,43 @@
 
 - **Theorems :**
 
-<font size=3>
-  ***1) Theroem1: A1-6;*** for any constant step-size, $\mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{1}{2 n}\left[\frac{\sigma \sqrt{d}}{1-\sqrt{\gamma R^{2}}}+R\left\|\theta_{0}-\theta_{*}\right\| \frac{1}{\sqrt{\gamma R^{2}}}\right]^{2},\text {When } \gamma=1 /\left(4 R^{2}\right), \text { we obtain } \mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{2}{n}\left[\sigma \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\|\right]^{2}$
-   **ps：可计算得$f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right) = \frac{1}{2}<\bar{\eta}_{n-1}, H \bar{\eta}_{n-1}>, \bar{\eta}_{n-1}=\bar{\theta}_{n-1}-\theta^\ast$**
-   ***2) Theorem2: A1-7;*** for any real p $\ge1$, and for a step-size $\gamma \le 1/12p\kappa R^2, $ we have $\left(\mathbb{E}\left|f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right|^{p}\right)^{1 / p} \leqslant \frac{p}{2 n}\left(7 \tau \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\| \sqrt{3+\frac{2}{\gamma p R^{2}}}\right)^{2}$ 
-   <font color=darkorange size=2>ps: 最后的bound中不含有关于噪声的信息，在collary中利用Markov不等式得到了一个关于目标的概率截尾不等式。
+  <font size=3>
+  ***1) Theroem1: A1-6;*** 
+   for any constant step-size, $$\mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{1}{2 n}\left[\frac{\sigma \sqrt{d}}{1-\sqrt{\gamma R^{2}}}+R\left\|\theta_{0}-\theta_{*}\right\| \frac{1}{\sqrt{\gamma R^{2}}}\right]^{2},\text {When } \gamma=1 /\left(4 R^{2}\right), \text { we obtain } \mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{2}{n}\left[\sigma \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\|\right]^{2}$$
+   
+   
+  **ps：可计算得$f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right) = \frac{1}  {2}<\bar{\eta}_{n-1}, H \bar{\eta}_{n-1}>, \bar{\eta}_{n-1}=\bar{\theta}_{n-1}-\theta^\ast$**
+
+
+  ***2) Theorem2: A1-7;*** for any real $p \ge 1$, and for a step-size $\gamma \le 1/12p\kappa R^2, $ we have 
+ $$\left(\mathbb{E}\left|f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right|^{p}\right)^{1 / p} \leqslant \frac{p}{2 n}\left(7 \tau \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\| \sqrt{3+\frac{2}{\gamma p R^{2}}}\right)^{2}$$
+   
+  <font color=darkorange size=2>
+   ps: 最后的bound中不含有关于噪声的信息，在collary中利用Markov不等式得到了一个关于目标的概率截尾不等式。
   </font>
   
 
-   ***3) Theorem3: B1-4*** consider the vector $ζ_n$ obtained as follows: (a)进行n步步长为常数$\frac{1}{2R^2\sqrt{n}}$的averaged SGD得到一个support point $\widetilde{\theta}_n$, and (b)做n步步长为$1/R^2$的averaged LMS逼近f在support point周围的二次逼近（i.e. one-step estimator). 
-   if $n \geqslant\left(19+9 R\left\|\theta_{0}-\theta_{*}\right\|\right)^{4}$,
+   ***3) Theorem3: B1-4*** consider the vector $ζ_n$ obtained as follows: (a)进行n步步长为常数$\frac{1}{2R^2\sqrt{n}}$的averaged SGD得到一个support point$\widetilde{\theta}$
+and (b)做n步步长为$1/R^2$的averaged LMS逼近f在support point周围的二次逼近（i.e. one-step estimator). 
+   if $n \geqslant\left(19+9 R\left\|\theta_{0}-\theta_{\ast}\right\|\right)^{4}$,
    $$
   \mathbb{E} f\left(\zeta_{n}\right)-f\left(\theta_{*}\right) \leqslant \frac{\kappa^{3 / 2} \rho^{3} d}{n}\left(16 R\left\|\theta_{0}-\theta_{*}\right\|+19\right)^{4}
   $$
-
-
-
-
   </font>
 &nbsp;
 - **Technical Skills :**
   
   **1)Theorem 1: A1, A2, A3, A4, A5, A6** 
-  <font size=3 color = #00008B> key: $\left\|H^{1 / 2} \bar{\eta}_{n}\right\|_{p} \leqslant\left\|\frac{1}{n+1} \sum_{i=0}^{n} M_{1}^{j} \eta_{0}\right\|_{p}+\left\|\gamma \sum_{k=1}^{n}\left(\sum_{i=k}^{n} M_{k+1}^{i}\right) \xi_{k}\right\|_{p}$ 将目标的上界bound分为相互独立的初始设置与噪声的影响，使得在分析时，可以在噪声为0的情况下，利用含初始设定item去bound目标，或者在初始设定完美的情况下(i.e. $\eta_0 = \theta_0 - \theta^\ast = 0$)，利用含$\xi_k$的item进行bound目标。（即对于两个变量，将一个特殊化后，对另一个进行分析）原文：the similarity with bias-variance decomposition。
+  <font size=3 color = #00008B> 
+  key: $$\left\|H^{1 / 2} \bar{\eta}_{n}\right\|_{p} \leqslant\left\|\frac{1}{n+1} \sum_{i=0}^{n} M_{1}^{j} \eta_{0}\right\|_{p}+\left\|\gamma \sum_{k=1}^{n}\left(\sum_{i=k}^{n} M_{k+1}^{i}\right) \xi_{k}\right\|_{p}$$
+   将目标的上界bound分为相互独立的初始设置与噪声的影响，使得在分析时，可以在噪声为0的情况下，利用含初始设定item去bound目标，或者在初始设定完美的情况下(i.e. $\eta_0 = \theta_0 - \theta^\ast = 0$)，利用含$\xi_k$的item进行bound目标。（即对于两个变量，将一个特殊化后，对另一个进行分析）原文：the similarity with bias-variance decomposition。
   </font> 
-  **Step one:** 假设没有noise，此处($\eta_n = \theta_n - \theta^\ast$)，利用$\left\|\eta_{n}\right\|^{2}=\left\|\eta_{n-1}\right\|^{2}-2 \gamma\left\langle\eta_{n-1},\left(x_{n} \otimes x_{n}\right) \eta_{n-1}\right\rangle+\gamma^{2}\left\langle\eta_{n-1},\left(x_{n} \otimes x_{n}\right)^{2} \eta_{n-1}\right\rangle$向目标$\langle\bar{\eta}_{n-1}, H\bar{\eta}_{n-1}\rangle$进行靠近, 通过离差阵限制以及$\gamma R^2 \le 1$消去二次形式，化为不等式的迭代类型。直接利用关于$E||\eta_n||^2$的不等式迭代以及凸性，可以得到关于initial condition的bound：
-  $$\mathbb{E}\left\langle\bar{\eta}_{n-1}, H \bar{\eta}_{n-1}\right\rangle \leqslant \frac{\left\|\eta_{0}\right\|^{2}}{n \gamma}$$
+  
+  
+  **Step one:** 
+ 假设没有noise，此处($\eta_n = \theta_n - \theta^\ast$)，利用$\left\|\eta_{n}\right\|^{2}=\left\|\eta_{n-1}\right\|^{2}-2 \gamma\left\langle\eta_{n-1},\left(x_{n} \otimes x_{n}\right) \eta_{n-1}\right\rangle+\gamma^{2}\left\langle\eta_{n-1},\left(x_{n} \otimes x_{n}\right)^{2} \eta_{n-1}\right\rangle$向目标$\langle\bar{\eta}_{n-1}, H\bar{\eta}_{n-1}\rangle$进行靠近, 通过离差阵限制以及$\gamma R^2 \le 1$消去二次形式，化为不等式的迭代类型。直接利用关于$E||\eta_n||^2$的不等式迭代以及凸性，可以得到关于initial condition的bounds。
+ 
+ 
 
   **Step two:** 对于noise进行分析，对于初始值有以下假设：
   <div align='center'>
