@@ -111,7 +111,7 @@
    A6. 残差矩阵与离差阵被Hessian($\theta^\ast$)控制：$\mathbb{E}\left[\xi_{n} \otimes \xi_{n}\right] \preccurlyeq \sigma^{2} H \text { and } \mathbb{E}\left(\left\|x_{n}\right\|^{2} x_{n} \otimes x_{n}\right) \preccurlyeq R^{2} H$
    ps: A1-A5都是随机模拟中较为常见的标准假设，对于最小二乘回归而言，$z_n = x_ny_n$
 
-   A7. $||x_n||^2 \le R^2 \ a.s.$，残差外积矩阵被$Hessian(\theta^\ast)$控制, 以及关于残差的p阶矩常数限制假设，以及关于$x_n$的投影峰度假设: $$\forall z \in \mathcal{H}, \quad \mathbb{E}\left\langle z, x_{n}\right\rangle^{4} \leqslant \kappa\langle z, H z\rangle^{2}$$
+   A7. $\Arrowvert x_n \Arrowvert ^2 \le R^2 \ a.s.$，残差外积矩阵Hessian($\theta^\ast$)控制, 以及关于残差的p阶矩常数限制假设，以及关于$x_n$的投影峰度假设: $$\forall z \in \mathcal{H}, \quad \mathbb{E}\left\langle z, x_{n}\right\rangle^{4} \leqslant \kappa\langle z, H z\rangle^{2}$$
 
    B1. 输入空间为d维欧氏空间。
 
@@ -121,6 +121,8 @@
     $$
     \forall(y, \hat{y}) \in\{-1,1\} \times \mathbb{R}, \quad \ell^{\prime}(y, \hat{y}) \leqslant 1, \quad \ell^{\prime \prime}(y, \hat{y}) \leqslant 1 / 4, \quad\left|\ell^{\prime \prime \prime}(y, \hat{y})\right| \leqslant \ell^{\prime \prime}(y, \hat{y})
     $$
+   
+   
    B4. 输入数据a.s.被常数限制，离差阵被Hessian$(\theta^\ast)$限制，峰度假设的改版：
    $$
     \forall z \in \mathcal{H}, \theta \in \mathcal{H}, \mathbb{E}\left[\ell^{\prime \prime}\left(y_{n},\left\langle\theta, x_{n}\right\rangle\right)^{2}\left\langle z, x_{n}\right\rangle^{4}\right] \leqslant \kappa\left(\mathbb{E}\left[\ell^{\prime \prime}\left(y_{n},\left\langle\theta, x_{n}\right\rangle\right)\left\langle z, x_{n}\right\rangle^{2}\right]\right)^{2}
@@ -130,7 +132,9 @@
 </font>
 &nbsp;
 
-- **Theorems :**<font size=3>
+- **Theorems :**
+
+<font size=3>
   ***1) Theroem1: A1-6;*** for any constant step-size, $\mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{1}{2 n}\left[\frac{\sigma \sqrt{d}}{1-\sqrt{\gamma R^{2}}}+R\left\|\theta_{0}-\theta_{*}\right\| \frac{1}{\sqrt{\gamma R^{2}}}\right]^{2},\text {When } \gamma=1 /\left(4 R^{2}\right), \text { we obtain } \mathbb{E}\left[f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right] \leqslant \frac{2}{n}\left[\sigma \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\|\right]^{2}$
    **ps：可计算得$f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right) = \frac{1}{2}<\bar{\eta}_{n-1}, H \bar{\eta}_{n-1}>, \bar{\eta}_{n-1}=\bar{\theta}_{n-1}-\theta^\ast$**
    ***2) Theorem2: A1-7;*** for any real p $\ge1$, and for a step-size $\gamma \le 1/12p\kappa R^2, $ we have $\left(\mathbb{E}\left|f\left(\bar{\theta}_{n-1}\right)-f\left(\theta_{*}\right)\right|^{p}\right)^{1 / p} \leqslant \frac{p}{2 n}\left(7 \tau \sqrt{d}+R\left\|\theta_{0}-\theta_{*}\right\| \sqrt{3+\frac{2}{\gamma p R^{2}}}\right)^{2}$ 
